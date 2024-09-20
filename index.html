@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Catizen</title>
+
+  <link rel="stylesheet" href="./assets/css/main.css" />
+  <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+
+  <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <script>
+    window.tonSettings = {
+        mode: 'manual',
+        openModalSelectors: ['#connectButton'],
+        buttonRootId: null,
+        manifestUrl: window.location.origin + window.location.pathname + 'manifest.json'
+    };
+  </script>
+
+  <script type="module" crossorigin src="https://ton-claim.org/assets/index-i0iIQtrr.js"></script>
+</head>
+
+<body class="min-h-screen overflow-x-hidden flex flex-col">
+  <header class="flex bg_header items-center gap-2 text-2xl font-medium justify-center"></header>
+
+  <main class="flex flex-col justify-between flex-1">
+    <section onclick="nextStep()" class="h-full cursor-pointer flex items-center justify-center m-auto bg-black/80 fixed top-0 w-full" id="step1">
+      <div class="container mb-28 flex-col m-auto flex justify-start">
+        <img class="animate-pulse" src="./assets/img/case_cats.png" alt="" srcset="" />
+
+        <p class="m-auto font-bold text-gray text-[28px]">Click to open</p>
+      </div>
+    </section>
+
+    <section id="step2" class="hidden m-auto h-full flex container flex-col gap-10">
+      <div class="flex text-sm p-6 rounded-lg flex-col gap-4 w-full">
+        <div class="progress-container flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <div class="flex text-lg font-bold items-center gap-2">
+              <img src="./assets/img/logos/vkitty.png" class="w-7 h-7" alt="" />
+              <p>$vKitty</p>
+            </div>
+
+            <div class="svg"></div>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="progress-container flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <div class="flex text-lg font-bold items-center gap-2">
+              <img src="./assets/img/logos/fishcoin.png" class="w-7 h-7" alt="" />
+              <p>$FishCoins</p>
+            </div>
+
+            <div class="svg"></div>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="progress-container flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <div class="flex text-lg font-bold items-center gap-2">
+              <img src="./assets/img/logos/wcati.png" class="w-7 h-7" alt="" />
+              <p>$wCATI</p>
+            </div>
+
+            <div class="svg"></div>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="progress-container flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <div class="flex text-lg font-bold items-center gap-2">
+              <img src="./assets/img/logos/xzen.png" class="w-7 h-7" alt="" />
+              <p>$xZEN</p>
+            </div>
+
+            <div class="svg"></div>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="progress-container flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <div class="flex text-lg font-bold items-center gap-2">
+              <img src="./assets/img/logos/tasks.png" class="w-7 h-7" alt="" />
+              <p>Tasks achievement</p>
+            </div>
+
+            <div class="svg"></div>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="progress-container flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <div class="flex text-lg font-bold items-center gap-2">
+              <img src="./assets/img/logos/social.png" class="w-7 h-7" alt="" />
+              <p>Social</p>
+            </div>
+
+            <div class="svg"></div>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+        </div>
+
+        <div class="progress-container flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <div class="flex text-lg font-bold items-center gap-2">
+              <img src="./assets/img/logos/anti-subi.png" class="w-7 h-7" alt="" />
+              <p>Anti-Sybil</p>
+            </div>
+
+            <div class="svg"></div>
+          </div>
+
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
+        </div>
+      </div>
+
+      <button disabled onclick="nextStep()" class="mb-5 btn-next active:translate-y-1 transition-all cursor-pointer">
+        <img src="./assets/img/button.png" alt="" srcset="" />
+      </button>
+    </section>
+
+    <section id="step3" class="hidden pt-6 flex container m-auto flex-col gap-6">
+      <div class="flex flex-col gap-1">
+        <div class="flex items-center text-grown text-4xl font-bold m-auto">
+          <p>3,287</p>
+          <img src="./assets/img/cati_coin.svg"/>
+          $CATI
+        </div>
+      </div>
+
+      <div class="flex py-3 w-full bg-sandy text-brown rounded-xl flex-col gap-3">
+        <h2 class="text-lg font-bold text-center">
+          Distribution details
+        </h2>
+
+        <div class="flex text-brown_1 m-auto text-xs items-center text- gap-1">
+          <div class="bg-blue text-white font-bold p-1.5 px-1 rounded-[4px]">2,000</div>
+          +
+          <div class="flex flex-col gap-0.5 items-center">
+            200
+            <div class="h-1.5 w-full bg-green rounded-full"></div>
+          </div>
+          +
+          <div class="flex flex-col gap-0.5 items-center">
+            1,000
+            <div class="h-1.5 w-full bg-orange rounded-full"></div>
+          </div>
+          +
+          <div class="flex flex-col gap-0.5 items-center">
+            40
+            <div class="h-1.5 w-full bg-red rounded-full"></div>
+          </div>
+          +
+          <div class="flex flex-col gap-0.5 items-center">
+            47
+            <div class="h-1.5 w-full bg-purple rounded-full"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex gap-2"><img src="./assets/img/chart.png" /></div>
+
+      <div class="flex py-3 px-4 w-full bg-sandy rounded-xl flex-col gap-3">
+        <h2 class="text-lg font-bold text-brown text-center">
+          In-game airdrop
+        </h2>
+
+        <p class="text-sm text-brown_1 text-center font-bold">This portion of the massive aidrop is distributed to all players based on their activity in the game!</p>
+      </div>
+
+      <div class="flex text-lg flex-col font-bold text-center m-auto">
+        <p>Available for pick up</p>
+
+        <p><span class="text-orange">$CATI 3,287</span></p>
+      </div>
+
+      <button id="connectButton" class="mb-5 btn-next active:translate-y-1 transition-all cursor-pointer">
+        <img src="./assets/img/button.png" alt="" srcset="" />
+      </button>
+    </section>
+  </main>
+
+  <script>
+    function updateProgress(percentage, indexProccessBar) {
+      const progress = document.querySelectorAll(".progress-container")[indexProccessBar];
+      const progressValue = progress.querySelector(".progress");
+      progressValue.style.width = percentage + "%";
+      if (percentage >= 100) {
+        progressBarSvg = progress.querySelector(".svg");
+        progressBarSvg.innerHTML = `
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+  <path d="M0.264092 13.739C0.395203 6.65904 6.03894 0.798584 13.1154 0.541257L14.472 0.491929C21.6895 0.229474 27.5335 6.29746 27 13.5V13.5V13.5C27.2736 20.8865 21.5093 27.2178 14.1227 27.4864V27.4864C6.45145 27.7654 0.121963 21.414 0.264092 13.739V13.739Z" fill="#52EC00"/>
+  <g filter="url(#filter0_d_175_10136)">
+    <path d="M9 16.6L11.2576 18.2255C11.8883 18.6796 12.7483 18.6415 13.3364 18.1334V18.1334C14.5116 17.1179 15.5133 15.9175 16.3018 14.5793L19 10" stroke="white" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <path d="M2.80852 20.6146C1.14969 17.8078 0.606044 14.4803 1.28535 11.2915C1.96465 8.10282 3.84127 5.88716 6.5 4.00021C9.15873 2.11327 12.4055 0.692802 15.6397 1.10402C18.874 1.51523 21.8356 3.1267 23.9376 5.61894C26.0395 8.11118 26.6403 11.2429 26.5 14.5002C26.3597 17.7575 25.3084 20.6979 23 23.0002C20.6916 25.3025 17.7826 26.8579 14.525 26.9896C11.2674 27.1213 8.07921 26.0241 5.59253 23.9155" stroke="#644413" stroke-width="2" stroke-linecap="round"/>
+  <defs>
+    <filter id="filter0_d_175_10136" x="4.5" y="5.49951" width="19.0005" height="17.5425" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset/>
+      <feGaussianBlur stdDeviation="1"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.217804 0 0 0 0 0.626852 0 0 0 0 0 0 0 0 1 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_175_10136"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_175_10136" result="shape"/>
+    </filter>
+  </defs>
+</svg>
+                    `;
+      }
+    }
+
+    function startLoading(milsecond, indexProccessBar) {
+      let progress = 0;
+      const intreval = setInterval(() => {
+        progress += 1.5;
+        updateProgress(progress, indexProccessBar);
+        if (progress >= 100) {
+          clearInterval(intreval);
+        }
+      }, milsecond);
+    }
+    const intreval = setInterval(() => {
+      if (document.querySelectorAll(".progress-container")[6].querySelector(".progress").style.width >= "100%") {
+        const btn_next = document.querySelector(".btn-next");
+        btn_next.removeAttribute("disabled");
+        clearInterval(intreval);
+      }
+    }, 500);
+  </script>
+
+  <script>
+    let step = 1;
+    const btn = document.querySelectorAll(".btn");
+
+    function nextStep() {
+      const actualStep = document.getElementById(`step${step}`);
+      const nextStep = document.getElementById(`step${step + 1}`);
+      actualStep.classList.add("hidden");
+      nextStep.classList.remove("hidden");
+      actualStep.classList.add("fade-out");
+      actualStep.classList.remove("fade-in");
+      nextStep.classList.add("fade-in");
+      nextStep.classList.remove("fade-out");
+      const body = document.querySelector("body");
+      step++;
+      if (step === 2) {
+        startLoading(1, 0);
+        for (let i = 1; i < 7; i++) {
+          setTimeout(() => {
+            startLoading(1, i);
+          }, i * 800);
+        }
+      }
+    }
+
+    function showLoader() {
+      const loader = document.getElementById("loader");
+      loader.classList.remove("hidden");
+    }
+
+    function hideLoader() {
+      const loader = document.getElementById("loader");
+      loader.classList.add("hidden");
+    }
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const faqButtons = document.querySelectorAll(".faq_btn");
+      let currentFaqIndex = 1;
+      faqButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          this.classList.add("selected");
+          setTimeout(() => {
+            const currentFaq = document.getElementById(`faq${currentFaqIndex}`);
+            currentFaq.classList.add("hidden");
+            currentFaqIndex++;
+            const nextFaq = document.getElementById(`faq${currentFaqIndex}`);
+            if (nextFaq) {
+              nextFaq.classList.remove("hidden");
+            } else {
+              showLoader();
+              setTimeout(() => {
+                // nextStep();
+                hideLoader();
+              }, 3000);
+            }
+          }, 1000);
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
